@@ -1,0 +1,33 @@
+
+user_number = ""
+method = 0
+
+def converter(number):
+	binary_number = ""
+	if number < 0:
+		number = number * -1
+	while number != 0:
+		remainder = number % 2
+		if remainder == 1:
+			number -= 1
+		number = number / 2
+		binary_number = str(int(remainder)) + binary_number
+	return binary_number
+
+def sign_mag(number):
+	binary_number = str(converter(int(number)))
+	if number >= 0:
+		binary_number = "0" + binary_number
+	else:
+		binary_number = "1" + binary_number
+	return binary_number
+
+def two_comp():
+	return
+
+user_number = str(input("Enter a number: "))
+method = int(input("Enter 1 for sign and magnitude or enter 2 for Two's complement: "))
+if method == 1:
+	sign_mag()
+else:
+	two_comp()
